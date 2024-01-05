@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/movieflicks/static/css/main.60ef188f.css",
-    "main.js": "/movieflicks/static/js/main.342a1358.js",
+    "main.js": "/movieflicks/static/js/main.d4b66832.js",
     "static/media/avengers-poster.jpeg": "/movieflicks/static/media/avengers-poster.0a11bd64b1bed487a64a.jpeg",
     "static/media/aquman-poster.jpeg": "/movieflicks/static/media/aquman-poster.ef07515dd67de0f3e1b0.jpeg",
     "static/media/footer.avif": "/movieflicks/static/media/footer.214725b3bc818d309b77.avif",
@@ -13,10 +13,10 @@
     "static/media/person.png": "/movieflicks/static/media/person.8f2eedb4941ac5d886e2.png",
     "index.html": "/movieflicks/index.html",
     "main.60ef188f.css.map": "/movieflicks/static/css/main.60ef188f.css.map",
-    "main.342a1358.js.map": "/movieflicks/static/js/main.342a1358.js.map"
+    "main.d4b66832.js.map": "/movieflicks/static/js/main.d4b66832.js.map"
   },
   "entrypoints": [
     "static/css/main.60ef188f.css",
-    "static/js/main.342a1358.js"
+    "static/js/main.d4b66832.js"
   ]
 }
