@@ -1,0 +1,15 @@
+# Node modules
+node_modules/
+
+# Build artifacts
+build/
+dist/
+
+# Yarn
+yarn.lock
+
+# npm
+package-lock.json
+
+# .env files
+.env*

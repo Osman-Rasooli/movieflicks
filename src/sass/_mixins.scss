@@ -1,0 +1,29 @@
+@use "variables" as *; // Include variables
+
+// Responsive
+@mixin respond($screen) {
+  @if $screen == $mobile-screen {
+    @media (max-width: $mobile-screen) {
+      @content;
+    }
+  } @else if $screen == $tablet-portrait-screen {
+    @media (max-width: $tablet-portrait-screen) {
+      @content;
+    }
+  } @else if $screen == $tablet-landscape-screen {
+    @media (max-width: $tablet-landscape-screen) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $laptop) {
+      @content;
+    }
+  }
+}
+
+// Flex
+@mixin flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

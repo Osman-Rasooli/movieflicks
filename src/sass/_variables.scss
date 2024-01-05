@@ -1,0 +1,21 @@
+$bg-color-primary: #31476e;
+$bg-color-secondary: #131a25;
+$bg-color-tertiary: #121d2a;
+
+$color-primary: #d29658;
+$color-primary-dark: darken($color-primary, 5%);
+
+$color-black: #111;
+
+$font-primary: "Raleway", sans-serif;
+$font-secondary: "Poppins", sans-serif;
+
+$transition-short: 0.15s ease-in;
+
+$box-shadow: 0 7px 28px 0 rgba(100, 100, 111, 0.2);
+
+// BREAKPOINTS
+$mobile-screen: 576px; // Small screens, such as mobile phones
+$tablet-portrait-screen: 768px; // Medium screens, such as tablets
+$tablet-landscape-screen: 992px; // Large screens, such as small laptops
+$large-screen: 1200px; // Large screens

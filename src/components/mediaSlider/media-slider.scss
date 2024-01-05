@@ -1,0 +1,34 @@
+@use "../../sass/index" as *;
+
+.media-slider {
+  .swiper-slide {
+    width: 15%;
+
+    @include respond($tablet-portrait-screen) {
+      width: 30%;
+    }
+    @include respond($mobile-screen) {
+      width: 40%;
+    }
+  }
+
+  .media-poster {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all $transition-short;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-5px);
+      opacity: 0.5;
+    }
+  }
+  .media-title {
+    color: $color-primary;
+    text-align: center;
+    font-family: $font-secondary;
+    font-weight: normal;
+  }
+}

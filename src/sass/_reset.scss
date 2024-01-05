@@ -1,0 +1,37 @@
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+input {
+  vertical-align: middle;
+}
+button,
+input {
+  outline: none;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+img {
+  max-width: 100%;
+}
+iframe {
+  border: none;
+}
