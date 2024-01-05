@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/movieflicks/static/css/main.60ef188f.css",
+    "main.js": "/movieflicks/static/js/main.342a1358.js",
+    "static/media/avengers-poster.jpeg": "/movieflicks/static/media/avengers-poster.0a11bd64b1bed487a64a.jpeg",
+    "static/media/aquman-poster.jpeg": "/movieflicks/static/media/aquman-poster.ef07515dd67de0f3e1b0.jpeg",
+    "static/media/footer.avif": "/movieflicks/static/media/footer.214725b3bc818d309b77.avif",
+    "static/media/hunger-poster.jpeg": "/movieflicks/static/media/hunger-poster.605c0027f935fd60025c.jpeg",
+    "static/media/hero-min.png": "/movieflicks/static/media/hero-min.320cd8eca3dbbd3228ed.png",
+    "static/media/killers-of-the-flower-moon.jpeg": "/movieflicks/static/media/killers-of-the-flower-moon.ea7da39596636ffb495d.jpeg",
+    "static/media/logo.png": "/movieflicks/static/media/logo.c915befc0db1ed8e04e6.png",
+    "static/media/alita-battle.jpeg": "/movieflicks/static/media/alita-battle.1f00f7d2ce1fde9c9572.jpeg",
+    "static/media/person.png": "/movieflicks/static/media/person.8f2eedb4941ac5d886e2.png",
+    "index.html": "/movieflicks/index.html",
+    "main.60ef188f.css.map": "/movieflicks/static/css/main.60ef188f.css.map",
+    "main.342a1358.js.map": "/movieflicks/static/js/main.342a1358.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60ef188f.css",
+    "static/js/main.342a1358.js"
+  ]
+}
