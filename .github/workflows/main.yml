@@ -1,4 +1,4 @@
-name: Deploy Web App
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -21,8 +21,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Deploy to Hosting Service
-        run: npm run deploy
+      - name: Build Application
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        run: |
+          npm run deploy
 
         env:
-          REACT_APP_ACCESS_TOKEN: ${{ secrets.REACT_APP_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
