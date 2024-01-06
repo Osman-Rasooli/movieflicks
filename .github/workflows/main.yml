@@ -29,4 +29,4 @@ jobs:
           npm run deploy
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REACT_APP_ACCESS_TOKEN: ${{ secrets.REACT_APP_ACCESS_TOKEN }}
