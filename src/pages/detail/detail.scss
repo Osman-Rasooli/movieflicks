@@ -1,0 +1,390 @@
+@use "../../sass/index" as *;
+
+.detail {
+  position: relative;
+
+  &-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    z-index: -1;
+  }
+  &-favorite {
+    margin: 0;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border-bottom-left-radius: 1rem;
+    &-icon {
+      color: $color-primary;
+      font-size: 2rem;
+      padding: 0.5rem;
+    }
+  }
+  &-content {
+    padding-top: 30rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+
+    @include respond($tablet-portrait-screen) {
+      flex-direction: column;
+      align-items: center;
+      padding: 18rem 2rem 0;
+    }
+
+    &-poster {
+      width: 30rem;
+      height: 40rem;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 1rem;
+      position: relative;
+    }
+
+    &-desc {
+      flex-basis: 50%;
+      font-family: $font-secondary;
+
+      @include respond($tablet-portrait-screen) {
+        text-align: center;
+      }
+
+      .title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include respond($tablet-portrait-screen) {
+          justify-content: center;
+          gap: 3rem;
+        }
+
+        a {
+          color: $color-primary;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1.2rem;
+          border: 1px solid $color-primary;
+          padding: 0.3rem 0.7rem 0.3rem 0.4rem;
+          border-radius: 3px;
+          cursor: pointer;
+          min-width: 10rem;
+        }
+        .imdb-icon {
+          color: $color-primary;
+          font-size: 2.5rem;
+        }
+      }
+
+      .title {
+        color: $color-primary;
+        text-transform: uppercase;
+        font-size: 3rem;
+        letter-spacing: 0.6px;
+        word-spacing: 1px;
+      }
+      .tagline {
+        margin: 0;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        color: rgba($color-primary, 0.8);
+        margin-bottom: 1rem;
+        font-weight: normal;
+        font-family: $font-secondary;
+      }
+      small.year {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $color-primary;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+      small.first-air-on {
+        color: #dedede;
+        font-size: 1.2rem;
+        display: inline-block;
+        margin-right: 1rem;
+      }
+      .genres {
+        display: flex;
+        gap: 1rem;
+        @include respond($tablet-portrait-screen) {
+          justify-content: center;
+        }
+      }
+      .genre {
+        border: 0.5px solid $color-primary;
+        display: inline-block;
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.6rem;
+        color: $color-primary;
+        font-size: 110%;
+      }
+      .runtime-langs {
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        @include respond($tablet-portrait-screen) {
+          justify-content: center;
+        }
+        .runtime {
+          gap: 0.5rem;
+
+          &-icon {
+            color: $color-primary;
+            font-size: 2rem;
+          }
+        }
+        .tag {
+          display: flex;
+          align-items: center;
+          font-size: 1.2rem;
+          font-family: $font-secondary;
+        }
+        .langs {
+          &-icon {
+            color: $color-primary;
+            font-size: 1.8rem;
+          }
+          span {
+            text-transform: uppercase;
+            padding: 0 0.5rem;
+            &:not(:last-of-type) {
+              border-right: 0.5px solid #ededed;
+            }
+          }
+        }
+
+        .seasons {
+          gap: 0.5rem;
+          text-transform: uppercase;
+          &-icon {
+            font-size: 1.5rem;
+            color: $color-primary;
+          }
+        }
+        .vote {
+          gap: 0.5rem;
+          text-transform: uppercase;
+          color: #aaa;
+          &-icon {
+            font-size: 1.5rem;
+            color: $color-primary;
+          }
+          &-average {
+            color: #ededed;
+          }
+        }
+      }
+      .overview {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        letter-spacing: 0.4px;
+        color: #dedede;
+      }
+      .casts {
+        margin-top: 2rem;
+
+        h3 {
+          text-transform: uppercase;
+          font-size: 1.3rem;
+          color: $color-primary;
+          margin-bottom: 1rem;
+        }
+      }
+      .birth {
+        margin-top: 2rem;
+        display: flex;
+        gap: 2rem;
+        font-family: $font-secondary;
+
+        & > div {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1.2rem;
+          color: $color-primary;
+        }
+
+        .light {
+          color: #dedede;
+        }
+
+        &-icon {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  &-movies {
+    padding: 2rem 5rem;
+
+    @include respond($mobile-screen) {
+      padding: 3rem 0;
+    }
+    .detail-person-movieList {
+      display: flex;
+      overflow-x: scroll;
+      width: auto;
+      white-space: nowrap;
+      gap: 1rem;
+      padding: 3rem 2rem;
+
+      h3 {
+        text-align: center;
+        padding-top: 1rem;
+        font-family: $font-secondary;
+        font-weight: normal;
+      }
+      .detail-person-img-container {
+        width: 200px;
+        height: 300px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  &-videos {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10rem 0;
+    @include respond($tablet-landscape-screen) {
+      padding: 10rem 2rem;
+    }
+  }
+  .video-container {
+    margin-top: 3rem;
+    display: flex;
+    overflow-x: scroll;
+    gap: 1rem;
+    width: 100%; /* Set the width of the container to the viewport width */
+    white-space: nowrap; /* Prevent line breaks */
+
+    iframe {
+      width: 50vw;
+      height: 30vw;
+
+      @include respond($tablet-landscape-screen) {
+        width: 70vw;
+        height: 40vw;
+      }
+      @include respond($tablet-portrait-screen) {
+        width: 90vw;
+        height: 60vw;
+      }
+    }
+  }
+  &-photos {
+    .detail-person-photos {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 2rem;
+
+      .detail-photo-item {
+        width: calc(23% - 1rem);
+        max-height: 400px;
+        margin: 10px;
+        overflow: hidden;
+
+        &:hover img {
+          transform: scale(1.1);
+        }
+
+        @include respond($tablet-portrait-screen) {
+          width: calc(46% - 1rem);
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          transition: transform 0.3s ease-in;
+        }
+      }
+
+      @include respond($mobile-screen) {
+        margin-top: 3rem;
+        padding: 0;
+      }
+    }
+  }
+
+  .section-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    background-color: rgba($color-primary, 0.1);
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    color: $color-primary;
+  }
+}
+
+.cast-list {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  justify-content: flex-start;
+  height: 150px;
+
+  @include respond($tablet-landscape-screen) {
+    height: 120px;
+  }
+  @include respond($tablet-portrait-screen) {
+    justify-content: center;
+  }
+
+  img {
+    border-radius: 1px;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.similar {
+  &-container {
+    display: flex;
+    overflow-x: scroll;
+    width: auto;
+    white-space: nowrap;
+    gap: 1rem;
+    padding: 3rem 2rem;
+  }
+  &-item {
+    h3 {
+      text-align: center;
+      padding-top: 1rem;
+      font-family: $font-secondary;
+      font-weight: normal;
+    }
+  }
+  &-img {
+    width: 200px;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

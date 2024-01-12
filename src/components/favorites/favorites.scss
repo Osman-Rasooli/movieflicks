@@ -1,0 +1,51 @@
+@use "../../sass/index" as *;
+
+.bookmark {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.7s ease-in;
+
+  &-icon {
+    color: $color-primary;
+    font-size: 2rem;
+  }
+  &-list {
+    width: 250px;
+    max-height: 300px;
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 5px;
+    overflow-y: scroll;
+    padding: 2rem 1rem;
+
+    @include respond($mobile-screen) {
+      width: 300px;
+      right: -150px;
+    }
+  }
+  &-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.5rem;
+
+    .image-container {
+      width: 60px;
+      height: 70px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    h2 {
+      font-size: 1.1rem;
+      color: $color-primary;
+    }
+  }
+}

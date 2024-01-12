@@ -1,0 +1,54 @@
+@use "../../sass/index" as *;
+
+.search {
+  &-wrapper {
+    display: inline-block;
+    min-width: 30%;
+
+    @include respond($tablet-portrait-screen) {
+      min-width: 50%;
+    }
+    @include respond($mobile-screen) {
+      width: 100%;
+    }
+  }
+  &-input {
+    border: none;
+    background-color: transparent;
+    border: 1px solid #333;
+    padding: 1rem 1rem 1rem 4rem;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    font-family: $font-secondary;
+    margin-left: 2rem;
+    width: 100%;
+    color: $color-primary;
+    transition: all $transition-short;
+    @include respond($mobile-screen) {
+      margin-left: 0;
+      padding-left: 3.5rem;
+      width: 80%;
+    }
+
+    &-icon {
+      font-size: 2rem;
+      position: absolute;
+      top: 1rem;
+      left: 3rem;
+      color: #333;
+      @include respond($mobile-screen) {
+        left: 1rem;
+      }
+      //   padding: 0.5rem 1rem;
+    }
+    &:focus-visible {
+      border: 1px solid rgba($color-primary, 0.7);
+    }
+    &:focus-visible + &-icon {
+      color: rgba($color-primary, 0.7);
+    }
+  }
+  &-wrapper {
+    position: relative;
+  }
+}

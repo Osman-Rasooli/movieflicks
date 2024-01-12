@@ -1,0 +1,30 @@
+@use "../../sass/index" as *;
+
+.catalog-header {
+  width: 100%;
+  height: 30vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 1)
+    ),
+    url("../../assets/hero-min.png");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &-title {
+    font-size: 4vw;
+    color: $color-primary;
+    letter-spacing: 0.5px;
+    font-family: $font-secondary;
+    text-shadow: 0 0.5rem 1rem rgba($color-primary, 0.2);
+    text-align: center;
+    padding-top: 15rem;
+    padding-bottom: 0rem;
+
+    @include respond($mobile-screen) {
+      padding-top: 20rem;
+    }
+  }
+}
