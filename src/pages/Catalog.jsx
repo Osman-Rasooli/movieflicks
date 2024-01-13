@@ -10,7 +10,6 @@ const Catalog = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(category);
     if (category !== "movie" && category !== "tv") {
       navigate("/not-found");
     }
@@ -20,7 +19,6 @@ const Catalog = () => {
     <section className="catalog">
       <CatalogHeader>{category === "tv" ? "TV SHOWS" : "MOVIES"}</CatalogHeader>
       <div className="container">
-        {console.log(category)}
         <List category={category} />
       </div>
     </section>

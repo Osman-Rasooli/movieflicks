@@ -29,7 +29,6 @@ function useLocalStorageFavorites() {
       setFavorites(updatedFavorites);
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
     }
-    console.log(favorites, "changed");
   };
 
   return [favorites, toggleFavorite];

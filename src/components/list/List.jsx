@@ -36,7 +36,6 @@ const List = (props) => {
       setLoading(true);
       if (!keyword) {
         const params = page === 1 ? {} : { page: page };
-        console.log(props.category);
         switch (props.category) {
           case "movie":
             result = await api.getMoviesList(movieType.trending, { params });
@@ -48,7 +47,6 @@ const List = (props) => {
         const params = { query: keyword, page: page };
         result = await api.search(props.category, { params });
       }
-      console.log(result);
       setItems(result.results);
       setTotalPages(result.total_pages > 100 ? 100 : result.total_pages);
       setLoading(false);

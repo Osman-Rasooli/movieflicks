@@ -36,21 +36,6 @@ const Slider = (props) => {
     };
     getMediaData();
   }, []);
-  // const [movies, setMovies] = useState([]);
-
-  // useEffect(() => {
-  //   const getMovies = async () => {
-  //     const params = { page: 1 };
-  //     try {
-  //       const response = await api.getMoviesList(movieType.trending, params);
-  //       setMovies(response.results.slice(0, 5));
-  //       console.log(response.results);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getMovies();
-  // }, []);
 
   return (
     <>
