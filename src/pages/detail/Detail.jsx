@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 // Icons
 import { CiClock2 } from "react-icons/ci";
@@ -17,7 +17,7 @@ import noImage from "../../assets/noImage.jpeg";
 
 import useLocalStorageFavorites from "../../hooks/useLocalStorage.js";
 
-import api, { category } from "../../api/api";
+import api from "../../api/api";
 import apiConfig from "../../api/apiConfig";
 
 import Loader from "../../components/loader/Loader";

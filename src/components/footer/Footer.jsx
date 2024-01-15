@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -12,8 +12,17 @@ import logo from "../../assets/logo.png";
 import "./footer.scss";
 
 const Footer = () => {
-  const navigate = useNavigate();
-  const { category } = useParams();
+  const { pathname, hash } = useLocation();
+
+  // To movie users to specific sections when clicked on footer buttons
+  useEffect(() => {
+    if (pathname === "/" && hash) {
+      document
+        .querySelector(hash)
+        .scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [pathname, hash]);
+
   return (
     <footer className="footer">
       <div className="footer-wrapper">
@@ -56,17 +65,17 @@ const Footer = () => {
               <div className="explore-left">
                 <ul className="footer-list">
                   <li className="footer-item">
-                    <a href="#trending-now-movies" className="footer-link">
+                    <a href="/#trending-now-movies" className="footer-link">
                       TRENDING MOVIES
                     </a>
                   </li>
                   <li className="footer-item">
-                    <a href="#popular-movies" className="footer-link">
+                    <a href="/#popular-movies" className="footer-link">
                       POPULAR MOVIES
                     </a>
                   </li>
                   <li className="footer-item">
-                    <a href="#top-rated-movies" className="footer-link">
+                    <a href="/#top-rated-movies" className="footer-link">
                       TOP-RATED MOVIES
                     </a>
                   </li>
@@ -75,12 +84,12 @@ const Footer = () => {
               <div className="explore-right">
                 <ul className="footer-list">
                   <li className="footer-item">
-                    <a href="#popular-tv-shows" className="footer-link">
+                    <a href="/#popular-tv-shows" className="footer-link">
                       POPULAR TV SHOWS
                     </a>
                   </li>
                   <li className="footer-item">
-                    <a href="#on-the-air-tv-shows" className="footer-link">
+                    <a href="/#on-the-air-tv-shows" className="footer-link">
                       ON THE AIR TV SHOWS
                     </a>
                   </li>

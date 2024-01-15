@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Mousewheel } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 import { useNavigate } from "react-router-dom";
 
 import { FaStar } from "react-icons/fa";
 
-import api, { category, movieType } from "../../api/api";
+import api, { category } from "../../api/api";
 import apiConfig from "../../api/apiConfig";
 import Button from "../button/Button";
 import Modal, { ModalContent } from "../modal/Modal";
@@ -79,7 +79,7 @@ const SliderContent = (props) => {
   const title = movie.title || movie.original_name;
   // Getting the release year only
   const release_year =
-    props.category == "movie"
+    props.category === "movie"
       ? movie.release_date.split("-")[0]
       : `Since ${movie.first_air_date.split("-")[0]}`;
   // getting backdrop if available, else getting movie poster
@@ -128,7 +128,7 @@ const SliderContent = (props) => {
           <Button
             onClick={() =>
               navigate(
-                `/${props.category == "movie" ? "movie" : "tv"}/${movie.id}`
+                `/${props.category === "movie" ? "movie" : "tv"}/${movie.id}`
               )
             }
             className="mr-sm"

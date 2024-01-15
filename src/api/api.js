@@ -1,4 +1,3 @@
-import axios from "axios";
 import axiosClient from "./axiosClient.js";
 
 export const category = {

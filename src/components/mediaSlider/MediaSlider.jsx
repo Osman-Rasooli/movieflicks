@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Mousewheel } from "swiper/modules";
 
-import api, { category, movieType } from "../../api/api";
+import api, { category } from "../../api/api";
 import apiConfig from "../../api/apiConfig";
 
 import { Link } from "react-router-dom";
