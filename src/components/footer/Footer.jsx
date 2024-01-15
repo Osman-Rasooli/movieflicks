@@ -17,9 +17,18 @@ const Footer = () => {
   // To movie users to specific sections when clicked on footer buttons
   useEffect(() => {
     if (pathname === "/" && hash) {
-      document
-        .querySelector(hash)
-        .scrollIntoView({ behavior: "smooth", block: "start" });
+      // document
+      //   .getElementById(hash.replace("#", ""))
+      //   .scrollIntoView({ behavior: "smooth", block: "start" });
+      // console.log(document.querySelector(`section#popular-movies`));
+      // console.log(hash.replace("#", ""));
+      setTimeout(() => {
+        // Scroll to the desired section on the home page
+        const homeSection = document.querySelector(`section${hash}`);
+        if (homeSection) {
+          homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 50);
     }
   }, [pathname, hash]);
 
