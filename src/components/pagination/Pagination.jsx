@@ -44,10 +44,14 @@ const Pagination = (props) => {
       >
         <div className="arrow left" />
       </li>
-      {paginationRange.map((pageNumber) => {
+      {paginationRange.map((pageNumber, i) => {
         // If the pageItem is a DOT, render the DOTS unicode character
         if (pageNumber === DOTS) {
-          return <li className="pagination-item dots">&#8230;</li>;
+          return (
+            <li className="pagination-item dots" key={Date.now()}>
+              &#8230;
+            </li>
+          );
         }
 
         // Render our Page Pills

@@ -133,7 +133,6 @@ const DisplayData = ({ data, category, favorites, toggleFavorite }) => {
             {data.imdb_id && (
               <a
                 href={`https://www.imdb.com/title/${data.imdb_id}`}
-                target="_blank"
                 className="imdb-btn"
               >
                 <FaImdb className="imdb-icon" />
@@ -178,7 +177,6 @@ const DisplayData = ({ data, category, favorites, toggleFavorite }) => {
                 ))}
               </div>
             )}
-
             {data.number_of_seasons && (
               <div className="seasons tag">
                 <FaFilm className="seasons-icon" />
@@ -245,7 +243,6 @@ const DisplayPerson = ({ data, movieList, photoList }) => {
             {data.imdb_id && (
               <a
                 href={`https://www.imdb.com/name/${data.imdb_id}`}
-                target="_blank"
                 className="imdb-btn"
               >
                 <FaImdb className="imdb-icon" />
@@ -277,7 +274,7 @@ const DisplayPerson = ({ data, movieList, photoList }) => {
         {(movieList.length > 0 && (
           <div className="detail-person-movieList">
             {movieList.map((movie, i) => (
-              <Link to={`/movie/${movie.id}`} key={i}>
+              <Link to={`/movie/${movie.id}`} key={movie.id}>
                 <div className="detail-person-movieList-item">
                   <div className="detail-person-img-container">
                     <img
@@ -316,7 +313,7 @@ const DisplayPerson = ({ data, movieList, photoList }) => {
           <div className="detail-person-photos">
             {photoList.map((photo, i) => (
               <div className="detail-photo-item" key={i}>
-                <img src={apiConfig.smallImage(photo.file_path)} alt="photo" />
+                <img src={apiConfig.smallImage(photo.file_path)} alt={""} />
               </div>
             ))}
           </div>
