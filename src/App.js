@@ -1,5 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 
+import { FavoritesProvider } from "./contexts/favoritesContext";
+
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Routess from "./config/Routess";
@@ -10,11 +12,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <>
+        <FavoritesProvider>
           <Header />
           <Routess />
           <Footer />
-        </>
+        </FavoritesProvider>
       </BrowserRouter>
     </>
   );

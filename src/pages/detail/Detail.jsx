@@ -15,7 +15,7 @@ import { IoLocation } from "react-icons/io5";
 import personImage from "../../assets/person-light.jpeg";
 import noImage from "../../assets/noImage.jpeg";
 
-import useLocalStorageFavorites from "../../hooks/useLocalStorage.js";
+import { useFavorites } from "../../contexts/favoritesContext";
 
 import api from "../../api/api";
 import apiConfig from "../../api/apiConfig";
@@ -40,7 +40,7 @@ const Detail = () => {
   // Casts Individual Photos
   const [photos, setPhotos] = useState([]);
   // Getting favorites list from Local Storage
-  const [favorites, toggleFavorite] = useLocalStorageFavorites();
+  const { favorites, toggleFavorite } = useFavorites();
   useEffect(() => {
     const getData = async () => {
       let response = null;
@@ -155,7 +155,7 @@ const DisplayData = ({ data, category, favorites, toggleFavorite }) => {
           <div className="genres">
             {data.genres &&
               data.genres.slice(0, 5).map((genre, i) => (
-                <span className="genre" key="i">
+                <span className="genre" key={i}>
                   {genre.name}
                 </span>
               ))}

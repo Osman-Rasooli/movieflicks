@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa6";
 
 import "./favorites.scss";
-import useLocalStorageFavorites from "../../hooks/useLocalStorage";
+
+import { useFavorites } from "../../contexts/favoritesContext";
 
 import api from "../../api/api";
 import apiConfig from "../../api/apiConfig";
@@ -13,8 +14,9 @@ import { truncateString } from "../../utils/utils";
 
 const Favorites = () => {
   const [open, setOpen] = useState(false);
-  const [favorites, toggleFavorite] = useLocalStorageFavorites();
   const [data, setData] = useState([]);
+
+  const { favorites } = useFavorites();
 
   const bookmarkRef = useRef(null);
 
@@ -43,7 +45,7 @@ const Favorites = () => {
       setData(response);
     };
     getData();
-  }, [favorites.length]);
+  }, [favorites]);
 
   return (
     <div className="bookmark">
@@ -57,6 +59,7 @@ const Favorites = () => {
           {data.map((dataItem) => (
             <Link
               to={`/${dataItem.first_air_date ? "tv" : "movie"}/${dataItem.id}`}
+              key={dataItem.id + new Date().toISOString()}
             >
               <div className="bookmark-item">
                 <div className="image-container" key={dataItem.id}>
